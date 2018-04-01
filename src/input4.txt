@@ -1,0 +1,34 @@
+# this is a test for change order in same session same cinema
+Cinema 1 A 15  # Row A of cinema 1 has 15 seats
+Cinema 1 B 20  # Row B of cinema 1 has 20 seats
+Cinema 1 Z 5   # Row Z of cinema 1 has 5 seats
+Cinema 1 X 5   # Row X of cinema 1 has 5 seats
+Session 1 09:00 Toy Story    # Toy Story is showing at the 9:00am session in cinema 1
+
+# assign seat
+Request 1 1 09:00 2
+Request 2 1 09:00 13        # fill the first row
+
+# Current row have not enough seat
+Change 1 1 09:00 11         # assign B1-B11
+
+# Cannot change
+Change 1 1 09:00 100        # keep B1-B11 are assigned
+
+# Shorter length previous have enough seats
+Change 1 1 09:00 2          # assign A1-A2
+                            # Free B1-B11
+
+# Shorter in current row
+Change 2 1 09:00 11         # assign A3-A13
+
+# Shorter
+Request 3 1 09:00 2         # assign A14-A15
+Change 2 1 09:00 9          # assign A3-A11
+                            # free A12-A13
+
+# test for move backward
+Change 3 1 09:00 2          # assign A12-A13
+                            # free A14-A15
+                            
+Print 1 09:00

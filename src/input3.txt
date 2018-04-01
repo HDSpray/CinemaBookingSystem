@@ -1,0 +1,37 @@
+# this is a test for seats more than one
+Cinema 1 A 15  # Row A of cinema 1 has 15 seats
+Cinema 1 B 20  # Row B of cinema 1 has 20 seats
+Cinema 1 Z 5   # Row Z of cinema 1 has 5 seats
+Cinema 2 X 5   # Row X of cinema 2 has 5 seats
+Session 1 09:00 Toy Story    # Toy Story is showing at the 9:00am session in cinema 1
+Session 1 14:00 OO Design    # OO Design is showing at the 14:00 session
+
+# Test the request add at the head, mid and tail of the row
+Request 1 1 09:00 2         # Request 2 seat assign A1-A2  
+                            # Output Booking 1 A1-A2
+Request 2 1 09:00 10        # Request 10 seat assign A2-A11
+                            # Output Booking 2 A3-A12
+Request 3 1 09:00 3         # Request 3 seat
+                            # Output Booking 3 A13-A15
+Print 1 09:00               # Output 
+                            # Toy Story
+                            # A: 2-15
+
+# Test Cancel
+Cancel 2                    # Cancel 2
+                            # Free A3-A12
+Request 5 1 09:00 8         # Assign A3-A10
+Cancel 1                    # Free A1-A2
+Request 6 1 09:00 2         # Assign A1-A2
+Cancel 3                    # Free A13-A15
+Request 7 1 09:00 5         # Assign A11-A15
+Print 1 09:00               
+
+# Test row have not sufficient seats
+Request 8 1 09:00 17        # Output Booing 8 B1-B17
+Request 9 1 09:00 4         # Output Booking 9 Z1-Z4
+
+# Test previous row have sufficient seats
+Request 10 1 09:00 3        # Output Booking 10 B18-B20
+
+Print 1 14:00             # Should not have assign seat

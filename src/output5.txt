@@ -1,0 +1,51 @@
+Booking 1 A1-A2
+Booking 2 A3-A15
+Change 2 A3-A7
+Change 2 A3-A6
+Change 1 A7-A13
+Booking 3 A1-A2
+Change 3 A1
+Booking 4 A2
+Change 3 A14-A15
+Change 4 A1-A2
+Change 1 A7
+Change 2 A8-A12
+Change 1 A3-A7
+Toy Story
+A: 1-2,3-7,8-12,14-15
+Change 1 B1-B10
+Booking 5 A3-A7
+Booking 6 B11-B15
+Change 1 B1-B5
+Change 6 B6-B10
+Change 5 B11-B20
+Change 5 A3-A6
+Toy Story
+A: 1-2,3-6,8-12,14-15
+B: 1-5,6-10
+Change 1 A1-A10
+Change 1 B1-B5
+Change 1 A1-A7
+Change 5 A8-A14
+Change 6 B1-B10
+Change 3 A15
+Change rejected
+Toy Story
+A: 1-2,8-12
+Programing by Contract
+A: 1-7,8-14,15
+B: 1-10
+Change rejected
+Change 1 Z1-Z5
+Change 1 A1-A7
+Change 1 Z1-Z3
+Change 3 X1-X3
+Change 2 Z4
+Toy Story
+A: 1-2
+Programing by Contract
+A: 8-14
+B: 1-10
+Liskov Substitution Principle
+Z: 1-3,4
+X: 1-3

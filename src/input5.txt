@@ -1,0 +1,68 @@
+# this is a test for change booking
+Cinema 1 A 15  # Row A of cinema 1 has 15 seats
+Cinema 1 B 20  # Row B of cinema 1 has 20 seats
+Cinema 2 Z 5   # Row Z of cinema 1 has 5 seats
+Cinema 2 X 5   # Row X of cinema 1 has 5 seats
+Cinema 3 E 7   # Row E of cinema 3 has 7 seats
+Session 1 09:00 Toy Story    # Toy Story is showing at the 9:00am session in cinema 1
+Session 1 14:00 Programing by Contract
+Session 2 09:00 Liskov Substitution Principle
+Session 3 09:00 UML Notation
+
+# Change within same session and cinema
+# Same row
+Request 1 1 09:00 2          # Booking 1 A1-A2
+Request 2 1 09:00 13         # Booking 2 A3-A15
+Change 2 1 09:00 5           # Change 2 A3-A7
+Change 2 1 09:00 4           # Change 2 A3-A6
+Change 1 1 09:00 7           # Change 1 A7-A13
+Request 3 1 09:00 2          # booking 3 A1-A2
+Change 3 1 09:00 1           # Change 3 A1
+Request 4 1 09:00 1          # Booking 4 A2
+Change 3 1 09:00 2           # Change 3 A14-A15
+Change 4 1 09:00 2           # Change 4 A1-A2
+Change 1 1 09:00 1           # Change 1 A7
+Change 2 1 09:00 5           # Change 2 A8-A12
+Change 1 1 09:00 5           # Change 1 A3-A7
+Print 1 09:00                # Toy Story
+                             # A: 1-2,3-7,8-12,14-15
+# different row
+Change 1 1 09:00 10          # Change 1 B1-B10
+Request 5 1 09:00 5          # Change 5 A3-A7
+Request 6 1 09:00 5          # Change 6 B11-B15
+Change 1 1 09:00 5           # Change 1 B1-B5
+Change 6 1 09:00 5           # Change 6 B6-B10
+Change 5 1 09:00 10          # Change 5 B11-B20
+Change 5 1 09:00 4           # Change 5 A3-A6
+Print 1 09:00                # Toy Story
+                             # A: 1-2,3-6,8-12,14-14
+                             # B: 1-5,6-10
+# different session
+Change 1 1 14:00 10          # Change 1 A1-A10
+Change 1 1 09:00 5           # Change 1 B1-B5
+Change 1 1 14:00 7           # Change 1 A1-A7
+Change 5 1 14:00 7           # Change 5 A8-A14
+Change 6 1 14:00 10          # Change 6 B1-B10
+Change 3 1 14:00 1           # Change 3 A15
+Change 2 1 14:00 20          # Change rejected
+Print 1 09:00                # Toy Story
+                             # A: 1-2,8-12
+Print 1 14:00                # Programing by Contract
+                             # A: 1-7,8-14,15
+                             # B: 1-10
+
+# different cinema
+Change 1 2 09:00 10         # Change rejected
+Change 1 2 09:00 5          # Change Z1-Z5
+Change 1 1 14:00 7          # Change A1-A7
+Change 1 2 09:00 3          # Change Z1-Z3
+Change 3 2 09:00 3          # Change X1-X3
+Change 2 2 09:00 1          # Change Z4
+Print 1 09:00               # Toy Story
+                            # A: 1-2
+Print 1 14:00               # Toy Story
+                            # A: 8-14
+                            # B: 1-10
+Print 2 09:00               # Liskov Substitution Principle
+                            # Z: 1-3,4
+                            # X: 1-3
