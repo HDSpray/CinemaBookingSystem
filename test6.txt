@@ -1,0 +1,11 @@
+Cinema 1 A 10
+
+Session 1 09:00 up
+
+Request 1 1 09:00 3     # Output Booking 1 A1-A3
+
+Request 2 1 09:00 3     # Output Booking 2 A4-A6
+
+Request 3 1 09:00 3     # Output Booking 3 A7-A9
+
+Change 2 1 09:00 3

@@ -1,0 +1,19 @@
+# this is a test for single seat
+Cinema 1 A 15      # Row A of cinema 1 has 15 seats
+Cinema 1 B 20      # Row B of cinema 1 has 20 seats
+Cinema 1 zzzzz 5   # Row zzzzz of cinema 1 has 5 seats
+Cinema 2 X 5       # Row X of cinema 1 has 5 seats
+Session 1 09:00 Toy Story    # Toy Story is showing at the 9:00am session in cinema 1
+Request 1 1 09:00 1    # Request 1 is for 1 ticket for the 9:00am session in cinema 1
+                       # Assign seats 1 of row A
+                       # Output Booking 1 A1
+Request 2 1 09:00 16   # Output Booking 2 B1-B16
+Request 3 1 09:00 1    # Output Booking 3 A2
+Request 4 1 09:00 12   # Output Booking 4 A3-A14
+Request 5 1 09:00 1    # Output Booking 5 A15
+Request 6 1 09:00 5    # Output Booking 6 zzzzz1-zzzzz5
+Print 1 09:00          # Output
+                       # Toy Story
+                       # A: 1,2,3-14,15
+                       # B: 1-16
+                       # zzzzz: 1-5

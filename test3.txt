@@ -1,0 +1,29 @@
+# this is a test for single seat cancelation
+Cinema 1 A 15  # Row A of cinema 1 has 15 seats
+Cinema 1 B 20  # Row B of cinema 1 has 20 seats
+Cinema 1 Z 5   # Row Z of cinema 1 has 5 seats
+Cinema 2 X 5   # Row X of cinema 2 has 5 seats
+Session 1 09:00 Toy Story    # Toy Story is showing at the 9:00am session in cinema 1
+Request 1 1 09:00 1          # Output Booking 1 A1
+Request 2 1 09:00 14         # Output Booking 2 A2-A15
+Cancel 1                     # Output Cancel 1
+Print 1 09:00                # Output
+                             # Toy Story
+                             # A: 2-15
+Request 3 1 09:00 1          # Output Booking 3 A1
+Request 4 1 09:00 1          # Output Booking 4 B1
+Cancel 2                     # Cancel 2
+Request 5 1 09:00 1          # Output Booking 5 A2
+Request 6 1 09:00 1          # Output Booking 6 A3
+Request 7 1 09:00 13         # Output Booking 7 B2-B14
+Request 8 1 09:00 1          # Output Booing 8 A4
+Cancel 8
+Request 9 1 09:00 1          # Output Booking 9 A4
+Request 10 1 09:00 10        # Output Booking 10 A5-A14
+Request 11 1 09:00 1         # Output Booking 11 A15
+Cancel 11                
+Request 12 1 09:00 1         # Output Booking 12 A15
+Print 1 09:00                # Output
+                             # Toy Story
+                             # A: 1,2,3,4,5-14,15
+                             # B: 1,2-14

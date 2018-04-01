@@ -1,0 +1,20 @@
+# this is a test for change order in same session same cinema
+Cinema 1 A 15  # Row A of cinema 1 has 15 seats
+Cinema 1 B 20  # Row B of cinema 1 has 20 seats
+Cinema 1 Z 5   # Row zzzzz of cinema 1 has 5 seats
+Cinema 1 X 5   # Row X of cinema 1 has 5 seats
+Session 1 09:00 Toy Story    # Toy Story is showing at the 9:00am session in cinema 1
+Request 1 1 09:00 2
+Request 2 1 09:00 13
+Change 1 1 09:00 11
+
+Change 1 1 09:00 100
+Change 1 1 09:00 2
+Change 2 1 09:00 17
+Request 3 1 09:00 13
+Request 4 1 09:00 4
+Request 5 1 09:00 5
+Request 6 1 09:00 3
+Change 5 1 09:00 1
+Change 6 1 09:00 5
+Print 1 09:00
